@@ -1,4 +1,4 @@
-**Problem:**  
+# Problem   
 Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.
 Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j (i ≤ j), inclusive.
 
@@ -11,7 +11,7 @@ Return 3.
 The three ranges are : [0, 0], [2, 2], [0, 2] and their respective sums are: -2, -1, 2.
 
 
-**Solution:**  
+# Solution  
 This can be solved by applying Divide and Conquer method.
 
 Divide:  
@@ -33,7 +33,7 @@ the last element of left subvector and the first element of right subvector. Tha
 range starts in left subvector and ends at the last element of left subvector. The other range starts at the first element of right
 subvector and ends in the right subvector.
 
-The third step of Combine pseudocode:   
+Pseudocode of the third step in Combine:   
 
     Calculate every ranges left_sum[i], which means the range sum starts at index i and ends at the end of left subvector.  
     Calculate every ranges right_sum[i], which means the range sum start at the index 0 and ends at index i of right subvector.  
@@ -48,7 +48,7 @@ The third step of Combine pseudocode:
       Number of possible ranges start at index iter_left (temp)= iter_right_upper - iter_right_lower   
       Let sum3 add up temp  
 
-**Analysis:**
+# Analysis  
 
 Devide:   
 Vector is divided into two sub vector with size n/2
@@ -60,7 +60,7 @@ Conbine:
 Sort costs O(nlogn)
 
 Traverse costs O(n), since iter_right_lower and iter_right_upper only increase and go through right subvector only once   
-Thus, total complexity T(n) = 2T(n/2) + O(nlogn) => T(n) = O(nlogn)  
+Thus, total complexity T(n) = 2T(n/2) + O(nlogn) => **T(n) = O(nlogn)**  
 T(n) is better than O(n^2)
 
 

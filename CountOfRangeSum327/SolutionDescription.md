@@ -61,7 +61,7 @@ Sort costs O(nlogn)
 
 Traverse costs O(n), since iter_right_lower and iter_right_upper only increase and go through right subvector only once   
 Thus, total complexity T(n) = 2T(n/2) + O(nlogn) => **T(n) = O(nlogn)**  
-T(n) is better than O(n^2)
+This algorithm's complexity T(n) is better than O(n^2)
 
 
 

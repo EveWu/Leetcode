@@ -42,7 +42,7 @@ subvector and ends in the right subvector.
 
 The third step of Combine pseudocode:
 
-Calculate every ranges left_sum[i], which means the range sum starts at index i and ends at the end of left subvector.
+`Calculate every ranges left_sum[i], which means the range sum starts at index i and ends at the end of left subvector.
 
 Calculate every ranges right_sum[i], which means the range sum start at the index 0 and ends at index i of right subvector.
 
@@ -63,7 +63,7 @@ Traverse left_sum in descending order, that is, start from left_sum[left_size-1]
   Number of possible ranges start at index iter_left (temp)= iter_right_upper - iter_right_lower
   
   Let sum3 add up temp
-  
+  `
   
 **Analysis:**
 

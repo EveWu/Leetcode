@@ -33,6 +33,7 @@ buy[i] = max(buy[i-1], sell[i-2]-prices)
 sell[i] = max(sell[i-1], buy[i-1]+prices)  
 ```
 Thus, `sell[n]` is the maximum profit.
+Solution idea came from [other's discussion](https://discuss.leetcode.com/topic/30421/share-my-thinking-process)
 
 # Analysis  
 As we only need traverse the array once, the time complexity is O(n).

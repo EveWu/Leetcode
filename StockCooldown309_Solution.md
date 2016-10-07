@@ -12,3 +12,27 @@ prices = [1, 2, 3, 0, 2]
 maxProfit = 3
 transactions = [buy, sell, cooldown, buy, sell]
 ```
+# Solution
+There are three operations, as `buy`, `sell`, and `rest`.  
+We define that:  
+``` 
+buy[i]: The maximum profit of any sequence end at "buy" operation before ith day (including ith day).  
+sell[i]: The maximum profit of any sequence end at "sell" operation before ith day (including ith day).  
+rest[i]: The maximum profit of any sequence end at "rest" operation before ith day (including ith day).  
+```  
+From above definition, we can have following equalence:  
+```
+buy[i] = max(buy[i-1], rest[i-1]-prices)
+sell[i] = max(sell[i-1], buy[i-1]+prices)
+rest[i] = max(buy[i-1], sell[i-1], rest[i-1])
+```
+Since `sell[i-1]>=rest[i-1]>=buy[i-1]`, it is clearly that `rest[i] = sell[i-1]`.  
+Then we have:  
+```
+buy[i] = max(buy[i-1], sell[i-2]-prices)  
+sell[i] = max(sell[i-1], buy[i-1]+prices)  
+```
+Thus, `sell[n]` is the maximum profit.
+
+# Analysis  
+As we only need traverse the array once, the time complexity is O(n).

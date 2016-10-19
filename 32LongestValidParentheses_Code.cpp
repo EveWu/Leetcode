@@ -12,36 +12,26 @@ public:
                     if (!state.empty()) {
                         count = state.top();
                         state.pop();
-                        max_count = max(max_count, count);  
                     }
                 } else {
                     if (state.top() == 0) {
                         count = 1;
                         state.pop();
-                        if (!state.empty()) {
-                            top = state.top();
-                            if (top != 0) {
-                                count += top;
-                                state.pop();
-                            }
-                        }
-                        state.push(count);
-                        max_count = max(max_count, count);
                     } else {
                         top = state.top();
                         state.pop();
                         state.pop();
                         count = top+1;
-                        if (!state.empty()) {
-                            top = state.top();
-                            if (top != 0) {
-                                count += top;
-                                state.pop();
-                            }
-                        }
-                        state.push(count);
-                        max_count = max(max_count, count);
                     }
+                    if (!state.empty()) {
+                        top = state.top();
+                        if (top != 0) {
+                            count += top;
+                            state.pop();
+                        }
+                    }
+                    state.push(count);
+                    max_count = max(max_count, count);
                     left--;
                 }
             }
